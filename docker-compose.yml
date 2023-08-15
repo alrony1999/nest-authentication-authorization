@@ -1,0 +1,16 @@
+# For more information: https://laravel.com/docs/sail
+version: '3.9'
+services:
+    dev-db:
+        image: 'postgres:15'
+        ports:
+            - 5434:5432
+        environment:
+            POSTGRES_DB: '${DB_DATABASE}'
+            POSTGRES_USER: '${DB_USERNAME}'
+            POSTGRES_PASSWORD: '${DB_PASSWORD}'
+        networks:
+            - demo
+networks:
+    demo:
+
